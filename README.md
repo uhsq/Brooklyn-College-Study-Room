@@ -1,3 +1,3 @@
 PROJECT: Brooklyn College Study Room Reservation 
 
-ABSTRACT: The Brooklyn College Study Room Reservation is a web-based platform, aiming to design the process of reserving study rooms for students, faculty and staff. It aims to allows users to view real-time room availability 
+ABSTRACT: The Brooklyn College Study Room Reservation aims to allow students, faculty, and staff members to reserve study rooms online without the hassle of booking them in person. This online reservation website will allow users to view room availability, make reservations, and receive confirmation. This project aims to eliminate the inconvenience of in-person booking and checking if there are any available study rooms without going in person. This project aspires to include admin control for managing room booking, database control, and user authentication, but this is up in the air, as my main focus is to have the project functionally working and passing all the criteria of this project. 
