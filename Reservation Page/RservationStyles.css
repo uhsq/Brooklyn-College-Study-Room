@@ -16,13 +16,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #882345; /* Navbar background color */
-    padding: 20px 30px; /* Navbar padding */
-    height: 100px; /* Fixed height for the navbar */
+    background-color: #882345; 
+    padding: 20px 30px; 
+    height: 100px; 
 }
 
 .logo img {
-    height: 80px; /* logo height */
+    height: 80px; 
 }
 
 .nav-links {
@@ -40,7 +40,7 @@
     text-decoration: none; /* Remove underline from links */
     color: white; 
     font-size: 20px; 
-    transition: color 0.3s; /* transition on hover */
+    transition: color 0.3s; 
 }
 
 .nav-links a:hover {
@@ -53,7 +53,7 @@
 .reservation-button { 
     background-color: #EBB700; /* Button background */
     color: black;
-    padding: 10px 20px; /* Padding inside the button */
+    padding: 10px 20px; 
     border-radius: 5px; /* Rounded corners */
     border: none; 
     cursor: pointer; /* Change cursor on hover */
