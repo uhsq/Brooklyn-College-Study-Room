@@ -6,7 +6,6 @@
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    text-align: center;
 }
 
 /* =====================
@@ -71,26 +70,67 @@
     display: flex; /* Align list items horizontally */
     align-items: center; /* Vertically align items */
     justify-content: space-between;
-    padding: 50px;
+    padding: 100px;
+    height: 50vh;
 }
 
 .section-contact {
-    max-width: 50%; /* Limit to half the width */
-    padding-right: 20px; 
+    text-align: left;
 }
 
 .section-contact h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 0;
 }
 
 .section-contact h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 10px;
 }
 
 .section-contact p{
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #555;
-    margin-top: 10px;
+    margin-top: 1px;
+}
+
+/* =============================
+   Button Styling Hero Section
+   ============================= */
+.reserve-button a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; 
+    font-size: 30px; 
+    transition: color 0.3s; 
+}
+
+.reserve-button {
+    background-color: #EBB700;
+    display: inline-block; /* Ensure it only takes up as much space as needed */
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 5px; /* Rounded corners */
+    border: none; 
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.reserve-button:hover {
+    background-color: #ebb800c4; /* Change color on hover */
+    color: black;
+}
+
+/* =============================
+   Hero Image Section
+   ============================= */
+.hero-image {
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center;
+    margin-top: 100px;
+}
+
+.hero-image img {
+    width: 80%; /* Adjust image size */
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
 }
