@@ -62,3 +62,123 @@
     background-color: #ebb800c4; /* Change color on hover */
     color: rgb(0, 0, 0);
 }
+
+/* ===========================
+   About the Library Styling 
+   =========================== */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.container p {
+    font-size: larger;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.image-container {
+    position: relative;
+    width: 250px;
+    float: right;
+    margin: 0 0 15px 15px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.555);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.overlay-text {
+    text-align: center;
+    padding: 10px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.About text {
+    text-align: justify;
+}
+
+/* =============================
+   Footer Styling
+   ============================= */
+.footer {
+    background-color: #882345; 
+    color:white;
+    padding: 30px; 
+    height: auto; 
+    display: flex; /* Align list items horizontally */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.foot-section {
+    justify-content: space-between;
+    margin: auto; /* Center the footer content */
+    padding: 20px;
+}
+
+.foot-contact, .foot-links, .footer-social {
+    flex: 2; /* Flex property to share space */
+    min-width: 250px; /* Min width for each section */
+    margin: 20px;
+}
+
+.footer h2 {
+    font-size: 1.5 rem;
+}
+
+.footer p {
+    line-height: 1.5;
+}
+
+.foot-links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.foot-links li {
+    margin: 10px;
+}
+
+.foot-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    transition: color 0.3s;
+}
+
+.foot-links a:hover {
+    color:#EBB700;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
