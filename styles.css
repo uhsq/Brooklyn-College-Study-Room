@@ -72,6 +72,7 @@
     justify-content: space-between;
     padding: 100px;
     height: 50vh;
+    color: #333;
 }
 
 .section-contact {
@@ -133,7 +134,7 @@
     width: 80%; /* Adjust image size */
     height: auto;
     border-radius: 5px; /* Rounded corners */
-    box-shadow: 20px 20px 3px #464545c4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image:hover {

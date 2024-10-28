@@ -72,6 +72,10 @@
     margin-top: 100px;
 }
 
+h1 {
+    color: #333;
+}
+
 .container p {
     font-size: larger;
     line-height: 30px;

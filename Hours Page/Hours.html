@@ -20,6 +20,183 @@
             <li><a href="../Reservation Page/Reservation.html" class = "reservation-button">Reservation</a></li>
         </ul>
     </nav>
-    
+    <!--------------Weekly Calendar-------------->
+    <div class="calendar-container">
+        <h1>Library Hours This Week</h1>
+        <div class="calendar-navigation">
+            <button id="prevWeekBtn">&larr;</button>
+            <div class="calendar" id="calendar"></div>
+            <button id="nextWeekBtn">&rarr;</button>
+        </div>
+    </div>
+
+    <script src="HoursJavaScript.js"></script>
+    <!--------------General Hours-------------->
+    <div class="general-hours">
+        <h1>General Hours</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday - Thursday</td>
+                    <td>8am - 8:45pm<br>
+                        <span class="notice">(Access limited to First Floor 8am - 9am)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>10am - 4:45pm<br>
+                        <span class="notice">(Access limited to First Floor Only)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Saturday - Sunday</td>
+                    <td>12pm - 4:45pm<br>
+                        <span class="notice">(Access limited to First Floor Only)</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<!--------------Holidays Hours-------------->
+    <div class="Holidays-Hours">
+        <h1>Holidays and Extented Hours</h1>
+        <table>
+            <tr>
+                <th colospan="2" class="holiday">Labor Day Weekend</th>
+            </tr>
+            <tr>
+                <td>August 31 - September 2<br>
+                    <span class="date">Saturday - Monday</span>
+                </td>
+                <td>CLOSED</td>
+            </tr>
+            <tr>
+                <th colospan="2" class="holiday">Early Closing</th>
+            </tr>
+            <tr>
+                <td>October 2 - 3<br>
+                    <span class="date">Monday</span>
+                </td>
+                <td>Open 10am to 4:45pm</td>
+            </tr>
+            <tr>
+                <th colospan="2" class="holiday">Indigenous People's Day/Columbus Day</th>
+            </tr>
+            <tr>
+                <td>October 14<br>
+                    <span class="date">Monday</span>
+                </td>
+                <td>CLOSED</td>
+            </tr>
+            <tr>
+                <th colospan="2" class="holiday">Thanksgiving Holiday</th>
+            </tr>
+            <tr>
+                <td>November 27<br>
+                    <span class="date">Wednesday</span>
+                </td>
+                <td>Open 10am to 4:45pm<br>
+                    <span class="notice">Early closing</span>
+                </td>
+            </tr>
+            <tr>
+                <td>November 28 - 29<br>
+                    <span class="date">Thursday - Friday</span>
+                </td>
+                <td>CLOSED</td>
+            </tr>
+            <tr>
+                <th colospan="2" class="holiday">Finals Period Extended Hours</th>
+            </tr>
+            <tr>
+                <td>December 15<br>
+                    <span class="date">Sunday</span>
+                </td>
+                <td>Open 11am to 8:45pm</td>
+            </tr>
+            <tr>
+                <td>December 16 - 19<br>
+                    <span class="date">Monday - Thursday</span>
+                </td>
+                <td>Open 8am to 9:45pm<br>
+                    <span class="notice">First Floor Only 8am-9am and 9pm-9:45pm</span>
+                </td>
+            </tr>
+            <tr>
+                <td>December 21<br>
+                    <span class="date">Saturday</span>
+                </td>
+                <td>Open 11am to 8:45pm</td>
+            </tr>
+            <tr>
+                <th colospan="3" class="holiday">Semester's End and Winter Holiday</th>
+            </tr>
+            <tr>
+                <td>December 23 - 25<br>
+                    <span class="date">Monday - Wednesday</span>
+                </td>
+                <td>CLOSED</td>
+            </tr>
+            <tr>
+                <td>December 26 - 27<br>
+                    <span class="date">Thursday - Friday</span>
+                </td>
+                <td>Open 10am to 2:45pm<br>
+                    <span class="notice">First Floor Only</span>
+                </td>
+            </tr>
+            <tr>
+                <td>December 30<br>
+                    <span class="date">Monday</span>
+                </td>
+                <td>Open 10am to 2:45pm<br>
+                    <span class="notice">First Floor Only</span>
+                </td>
+            </tr>
+            <tr>
+                <td>December 31 - January 1<br>
+                    <span class="date">Tueday - Wednesday</span>
+                </td>
+                <td>CLOSED</td>
+            </tr>
+        </table>
+    </div>
+<!--------------Footer-------------->
+    <footer class="footer">
+        <div class="foot-section">
+            <div class="foot-contact"></div>
+                <h2>Contact Us</h2>
+                <p>Email: CircDesk@brooklyn.cuny.edu</p>
+                <p>Phone: (718)951-5335</p>
+                <p>Address: Brooklyn College Library <br>
+                    2900 Bedford Avenue, Brooklyn, NY 11210</p>
+            </div>
+
+            <div class="foot-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About Page/About.html">About</a></li>
+                    <li><a href="Contact Page/Contact.html">Contact</a></li>
+                    <li><a href="Hours Page/Hours.html">Hours</a></li>
+                    <li><a href="Reservation Page/Reservation.html">Reservation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/brooklyncollegelibrary/"><img src="/images/facebook logo.png" alt = "Facebook"></a>
+                    <a href="https://www.instagram.com/brooklyncollegelibrary/?hl=en"><img src="/images/instagram logo.png" alt = "Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
