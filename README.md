@@ -33,3 +33,13 @@ Here are some of the wireframes for the project:
 ![image](https://github.com/user-attachments/assets/e3e5ad57-32fb-4d17-9b78-9a1e26a40795)
 ![image](https://github.com/user-attachments/assets/32475df4-79ef-44aa-97d5-60a4cfc0f25c)
 ![image](https://github.com/user-attachments/assets/96a41f24-fb95-4647-af6f-b8aa859e08aa)
+
+
+## Color Scheme 
+The color scheme for the website aligns with Brooklyn College’s official branding to create a cohesive user experience. This will reinforce the connection between the reservation system and the college, ensuring visitors to immediately recognize the website
+- **BC Maroon:**
+    - **Hex Code:**  #882345
+    - **RGB:** (136, 35, 69)
+- **BC Gol:**
+    - **Hex Code:**  #EBB700
+    - **RGB:** (235, 183, 0)
