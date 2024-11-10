@@ -62,3 +62,84 @@
     background-color: #ebb800c4; /* Change color on hover */
     color: rgb(0, 0, 0);
 }
+/* =====================
+   Reservation Table Styling
+   ===================== */
+.date-heading{
+    text-align: center;
+}
+#reservation-table {
+    width: 75%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 12px; /* More padding for readability */
+}
+
+th {
+    background-color: #f1f1f1;
+    color: black;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Slightly lighter color for even rows */
+}
+
+.available {
+    background-color: #107819;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.available:hover {
+    background-color: #095212; /* Darker shade on hover */
+}
+
+.available.selected {
+    background-color: #f59f16;
+    color: black;
+}
+
+.unavailable {
+    background-color: #f2f2f2;
+    color: #ccc;
+    border: 1px solid #ddd;
+}
+/* =====================
+   Room Links Styling 
+   ===================== */
+.room-link {
+    color: #003366; /* Dark blue color */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
+}
+
+.room-link:hover {
+    color: #0066cc; /* Lighter blue on hover */
+}
+/* =====================
+   Status Box Styling 
+   ===================== */
+.status-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+  .available { background-color: #107819; }
+  .your-booking { background-color: #f59f16; }
+  .unavailable { background-color: #990000; }
