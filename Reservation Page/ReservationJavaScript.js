@@ -24,9 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Display the formatted date in the h2 element
     document.getElementById("reservation-date").textContent = `Reservation Date: ${formattedDate}`;
-});
 
-document.addEventListener("DOMContentLoaded", function() {
     // Get all available cells
     const availableCells = document.querySelectorAll('.available');
     let totalSelectedCount = 0; // To keep track of total selected cells
@@ -100,6 +98,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     c.style.opacity = '1'; // Reset opacity
                 });
             }
+
         });
     });
+
+    // Submit times function
+    function submitTimes() {
+        const selectedCells = document.querySelectorAll('.selected');
+        let times = [];
+
+        selectedCells.forEach(cell => {
+            // Get the time slot text from the row
+            const timeSlot = cell.parentNode.querySelector('td:first-child').textContent;
+            times.push(timeSlot);
+        });
+
+        alert("You have selected the following time slots: " + times.join(', '));
+        // Here you can handle the submission logic (e.g., saving to database or form submission)
+    }
+
+    // Attach the submitTimes function to the submit button
+    document.getElementById('submitBtn').addEventListener('click', submitTimes);
 });

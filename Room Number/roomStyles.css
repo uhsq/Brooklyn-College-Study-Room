@@ -1,0 +1,64 @@
+/* =====================
+   General Styling
+   ===================== */
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* =====================
+   Navbar Styling
+   ===================== */
+   .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #882345; 
+    padding: 20px 30px; 
+    height: 100px; 
+}
+
+.logo img {
+    height: 80px; 
+}
+
+.nav-links {
+    list-style: none; 
+    display: flex; /* Align list items horizontally */
+    margin: 0; 
+    padding: 0; 
+}
+
+.nav-links li {
+    margin-left: 60px; /* Space between items */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; 
+    font-size: 20px; 
+    transition: color 0.3s; 
+}
+
+.nav-links a:hover {
+    color: #EBB700; /* Color change on hover */
+}
+
+/* =====================
+   Button Styling
+   ===================== */
+.reservation-button { 
+    background-color: #EBB700; /* Button background */
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 5px; /* Rounded corners */
+    border: none; 
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.reservation-button:hover {
+    background-color: #ebb800c4; /* Change color on hover */
+    color: rgb(0, 0, 0);
+}

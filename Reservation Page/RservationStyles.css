@@ -108,7 +108,7 @@ tbody tr:nth-child(even) {
 }
 
 .unavailable {
-    background-color: #f2f2f2;
+    background-color: #990000;
     color: #ccc;
     border: 1px solid #ddd;
 }
@@ -116,7 +116,7 @@ tbody tr:nth-child(even) {
    Room Links Styling 
    ===================== */
 .room-link {
-    color: #003366; /* Dark blue color */
+    color: #000000; 
     font-weight: bold; /* Make the text bold */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
@@ -143,3 +143,19 @@ tbody tr:nth-child(even) {
   .available { background-color: #107819; }
   .your-booking { background-color: #f59f16; }
   .unavailable { background-color: #990000; }
+
+/* =====================
+   Submit Button 
+   ===================== */
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #45a049;
+}
