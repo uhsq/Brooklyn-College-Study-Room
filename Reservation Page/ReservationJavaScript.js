@@ -102,19 +102,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    const timeslots = [
+        "8:00AM", "9:00AM", "10:00AM", "11:00AM", 
+        "12:00PM", "1:00PM", "2:00PM", "3:00PM", 
+        "4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM"
+    ];
+
     // Submit times function
     function submitTimes() {
-        const selectedCells = document.querySelectorAll('.selected');
+        const selectedCells = Array.from(document.querySelectorAll('.selected'));
+        const row_parent = selectedCells[0].parentNode;
         let times = [];
+        let room = "";
 
-        selectedCells.forEach(cell => {
-            // Get the time slot text from the row
-            const timeSlot = cell.parentNode.querySelector('td:first-child').textContent;
-            times.push(timeSlot);
-        });
+        // Get the room number text from the row
+        room = row_parent.querySelector('td:first-child').textContent;
 
-        alert("You have selected the following time slots: " + times.join(', '));
-        // Here you can handle the submission logic (e.g., saving to database or form submission)
+
+        for (let i = 0; i < 14; i++) {
+
+            if (i == 0) { continue; }
+            let cell = row_parent.children.item(i);
+            if (!selectedCells.includes(cell)) { continue; }
+
+            // Get the time slot text from the column
+            
+            times.push(timeslots[i-1]);
+        }
+
+        if (times.length > 1) {
+            alert("You have selected time slots " + times.join(' and ') + " for " + room + ".");
+        } else {
+            alert("You have selected time slot " + times[0] + " for " + room + ".");
+        }
+        // handle the submission
+
     }
 
     // Attach the submitTimes function to the submit button
