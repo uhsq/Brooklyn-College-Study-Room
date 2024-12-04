@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Brooklyn College Reservation Home</title>
+</head>
+<body>
+    <!--------------Navbar-------------->
+    <section style="width: 100vw;">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/Brooklyn College Logo.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Page/About.html">About</a></li>
+                <li><a href="Contact Page/Contact.html">Contact</a></li>
+                <li><a href="Hours Page/Hours.html">Hours</a></li>
+                <li><a href="Reservation Page/Reservation.html" class="reservation-button">Reservation</a></li>
+            </ul>
+            <div style="
+                width: 190.48px;
+                height: 84px;
+                text-align: right;">
+
+                    <button style="
+                        text-decoration: none;
+                        color: rgb(136, 35, 69);
+                        font-size: 18px;" id="username">Login/Register</button>
+            </div>
+        </nav>
+    </section>
+    
+    <!--------------Hero Section-------------->
+    <section class="hero-section" style="width: 87vw;">
+        <div class="section-contact" style="width: 70vw;margin: 53px;scale: 1;">
+            <h2 class="title">Welcome to</h2>
+            <h3 class="subtitle">Brooklyn College Library</h3>
+            <p class="tag-line">Reserve. Study. Succeed</p>
+
+            <div class="reserve-button">
+                <a href="Reservation Page/Reservation.html" class="reserve button">Reserve Now</a>
+            </div>
+        </div>
+        <div class="hero-image" style="scale: 1.15;">
+            <img src="images/Brooklyn College Library.jpg" alt="Hero">
+        </div>
+    </section>
+    <!--------------Footer-------------->
+    <footer class="footer" style="width: 100vw;">
+        <div class="foot-section">
+            <div class="foot-contact"></div>
+                <h2>Contact Us</h2>
+                <p>Email: CircDesk@brooklyn.cuny.edu</p>
+                <p>Phone: (718)951-5335</p>
+                <p>Address: Brooklyn College Library <br>
+                    2900 Bedford Avenue, Brooklyn, NY 11210</p>
+            </div>
+
+            <div class="foot-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About Page/About.html">About</a></li>
+                    <li><a href="Contact Page/Contact.html">Contact</a></li>
+                    <li><a href="Hours Page/Hours.html">Hours</a></li>
+                    <li><a href="Reservation Page/Reservation.html">Reservation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/brooklyncollegelibrary/"><img src="images/facebook logo.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/brooklyncollegelibrary/?hl=en"><img src="images/instagram logo.png" alt="Instagram"></a>
+                </div>
+            </div>
+        
+    </footer>
+    <!--------------Account popup-------------->
+    <div class="popup-container" id="popupContainer" style="display: none;">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBtn">X</span>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="form-container active">
+                <h2>Login/Register</h2>
+                <form id="login-form">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required="">
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required="">
+                    
+                    <div>
+                        <button type="submit">Login</button>
+                        <button type="button" id="registerBtn">Register</button>
+                    </div>
+                </form>
+                <script src="register.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

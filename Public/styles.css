@@ -1,0 +1,264 @@
+/* =====================
+   General Styling
+   ===================== */
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* =====================
+   Navbar Styling
+   ===================== */
+.navbar {
+    display: flex;
+    background-color: #882345;
+    padding: 20px 30px;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 80px; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+   /* Space between items */
+   display: flex;
+   margin-left: 30px;
+   margin-right: 30px;
+   align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; 
+    font-size: 20px; 
+    transition: color 0.3s; 
+}
+
+.nav-links a:hover {
+    color: #EBB700; /* Color change on hover */
+}
+
+/* =====================
+   Popup Styling
+   ===================== */
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #882345
+}
+
+.form-container {
+    display: none;
+}
+
+#loginForm.active, #registerForm.active {
+    display: block;
+}
+
+/* Form Styling */
+input {
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* =====================
+   Button Styling
+   ===================== */
+.reservation-button { 
+    background-color: #EBB700; /* Button background */
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 5px; /* Rounded corners */
+    border: none; 
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.reservation-button:hover {
+    background-color: #ebb800c4; /* Change color on hover */
+    color: rgb(0, 0, 0);
+}
+
+/* =====================
+   Hero Section Styling
+   ===================== */
+.hero-section {
+    display: flex; /* Align list items horizontally */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between;
+    padding: 0px;
+    height: 75vh;
+    color: #333;
+}
+
+.section-contact {
+    text-align: left;
+}
+
+.section-contact h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.section-contact h3 {
+    font-size: 2.4rem;
+    margin-top: 10px;
+}
+
+.section-contact p{
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 1px;
+}
+
+/* =============================
+   Button Styling Hero Section
+   ============================= */
+.reserve-button a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; 
+    font-size: 25px; 
+    transition: color 0.3s; 
+}
+
+.reserve-button {
+    background-color: #EBB700;
+    display: inline-block; /* Ensure it only takes up as much space as needed */
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 5px; /* Rounded corners */
+    border: none; 
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.reserve-button:hover {
+    background-color: #ebb800c4; /* Change color on hover */
+    color: black;
+}
+
+/* =============================
+   Hero Image Section
+   ============================= */
+.hero-image {
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center;
+    margin: 100px 50px;
+}
+
+.hero-image img {
+    width: 100%; /* Adjust image size */
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image:hover {
+    transform:scale(.97);
+    z-index: 2;
+}
+
+/* =============================
+   Footer Styling
+   ============================= */
+.footer {
+    background-color: #882345; 
+    color:white;
+    padding: 30px; 
+    height: 30vh; 
+    display: flex; /* Align list items horizontally */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0vh;
+}
+
+.foot-section {
+    justify-content: space-between;
+    margin: auto; /* Center the footer content */
+    padding: 20px;
+}
+
+.foot-contact, .foot-links, .footer-social {
+    flex: 2; /* Flex property to share space */
+    min-width: 250px; /* Min width for each section */
+    margin: 20px;
+}
+
+.footer h2 {
+    font-size: 1.5 rem;
+}
+
+.footer p {
+    line-height: 1.5;
+}
+
+.foot-links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.foot-links li {
+    margin: 10px;
+}
+
+.foot-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    transition: color 0.3s;
+}
+
+.foot-links a:hover {
+    color:#EBB700;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
