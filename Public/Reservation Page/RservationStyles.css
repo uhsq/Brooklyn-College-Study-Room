@@ -149,7 +149,7 @@ tbody tr:nth-child(even) {
 /* =====================
    Submit Button 
    ===================== */
-.submit-btn {
+   .submit-btn {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -160,4 +160,35 @@ tbody tr:nth-child(even) {
 }
 .submit-btn:hover {
     background-color: #45a049;
+}
+
+.popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 5px;
+    position: fixed; /* Change from absolute to fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1); /* Initial scale for popup */
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden; /* Keep hidden initially */
+    opacity: 0; /* Make the popup invisible */
+    transition: transform 0.4s, opacity 0.4s; /* Smooth transition for both scale and opacity */
+}
+
+.open-popup {
+    visibility: visible; /* Set visibility to visible */
+    opacity: 1; /* Set opacity to fully visible */
+    transform: translate(-50%, -50%) scale(1); /* Reset scale */
+}
+
+.popup button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
