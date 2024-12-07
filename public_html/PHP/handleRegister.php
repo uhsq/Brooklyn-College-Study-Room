@@ -1,27 +1,31 @@
 <?php
+session_start();
+
 $config = require '../../Private/db_config.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$input = file_get_contents('php://input');
+$data = json_decode($input, true);
 
-$email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+
+$email = isset($data['email']) ? trim($data['email']) : '';
+$password = isset($data['password']) ? trim($data['password']) : '';
 
 if (empty($email) || empty($password)) {
     die('Please fill all the fields.');
 }
 
-$_SESSION['email'] = $email;
 $conn = new mysqli($config['host'], $config['username'], $config['password'], $config['db_name']);
 
 if ($conn->connect_error) {
-    die('Connection Failed: ' . $conn->connect_error);
+    die("Connection Failed: $conn->connect_error");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("SELECT otp FROM accounts WHERE email = ? AND otp IS NOT NULL");
     if ($stmt === false) {
-        die('Error preparing statement: ' . $conn->error);
+        die("Error preparing statement: $conn->error");
     }
 
     $stmt->bind_param("s", $email);
@@ -30,22 +34,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows === 1) {
         // user is not verified
-        $otp = $result->fetch_assoc();
+        $res = $result->fetch_assoc();
+        $otp = $res['otp'];
+
         // send email with otp
         $subject = "Brooklyn College Library Verification Code";
-        $message = 'Please verify your account with the following code: ' . $otp;
+        $message = "Please verify your account with the following code: $otp";
+        $headers = array(
+            "MIME-Version" => "1.0",
+            "Content-Type" => "text/html;charset=UTF-8",
+            "From" => "BrooklynCollegeLibrary@bcmail.cuny.edu",
+            "Reply-To" => "No-reply@bcmail.cuny.edu"
+        );
 
-        if (mail($email, $subject, $message)) {
+        if (mail($email, $subject, $message, $headers)) {
             echo json_encode(["success" => true]);
         } else {
             die('Failed to send verification code. Please try again.');
         }
-        echo json_encode(["success" => true]);
 
     } else {
         $stmt2 = $conn->prepare("SELECT * FROM accounts WHERE email = ? AND otp IS NULL");
         if ($stmt2 === false) {
-            die('Error preparing statement: ' . $conn->error);
+            die("Error preparing statement: $conn->error");
         }
 
         $stmt2->bind_param("s", $email);
@@ -67,21 +78,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 die('Error preparing statement: ' . $conn->error);
             }
             $user_role = "STUDENT"; // default role. Admins can be manually set in db
-            $stmt3->bind_param("sssi", $user_role, $email, $hashed_pass, $otp);
+            $stmt3->bind_param("sssi", $user_role, $email, $hashed_pass, $new_otp);
             // Execute the query
             if (!$stmt3->execute()) {
                 die("Error: " . $stmt->error);
             }
 
             $subject = "Brooklyn College Library Verification Code";
-            $message = 'Please verify your account with the following code: ' . $new_otp;
+            $message = "Please verify your account with the following code:  $new_otp";
+            $headers = array(
+                "MIME-Version" => "1.0",
+                "Content-Type" => "text/html;charset=UTF-8",
+                "From" => "BrooklynCollegeLibrary@bcmail.cuny.edu",
+                "Reply-To" => "No-reply@bcmail.cuny.edu"
+            );
 
-            if (mail($email, $subject, $message)) {
+
+            if (mail($email, $subject, $message, $headers)) {
                 echo json_encode(["success" => true]);
             } else {
                 die('Failed to send verification code. Please try again.');
             }
-            echo json_encode(["success" => true]);
         }
         $stmt2->close();
     }

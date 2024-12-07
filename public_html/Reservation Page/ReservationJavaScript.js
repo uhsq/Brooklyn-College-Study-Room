@@ -138,22 +138,4 @@ document.addEventListener("DOMContentLoaded", function() {
         // handle the submission
 
     }
-
-    // Function to open the first popup and overlay
-    function openPopup() {
-        document.getElementById("popup").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    // Function to close the first popup and open the second popup
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";  // Close the first popup
-        document.getElementById("confirmationPopup").style.display = "block";  // Show the second popup
-    }
-
-    // Function to close the second popup
-    function closePopup2() {
-        document.getElementById("confirmationPopup").style.display = "none";  // Close the second popup
-        document.getElementById("overlay").style.display = "none";  // Hide the overlay
-    }
 });
