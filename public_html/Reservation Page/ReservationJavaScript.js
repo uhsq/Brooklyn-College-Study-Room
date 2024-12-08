@@ -1,4 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
+const timeslots = [
+    "8:00AM", "9:00AM", "10:00AM", "11:00AM",
+    "12:00PM", "1:00PM", "2:00PM", "3:00PM",
+    "4:00PM", "5:00PM" , "6:00PM" , "7:00PM" , "8:00PM" 
+];
+const rooms = [
+    -1,
+    18,
+    19,
+    36,
+    134,
+    211,
+    212,
+    213,
+    282,
+    310,
+    315,
+    340,
+    341,
+    342,
+    415,
+    416,
+    417
+];
+document.addEventListener("DOMContentLoaded", function () {
+    updateChart('../PHP/handleReservation.php');
     // Get the current date
     const currentDate = new Date();
 
@@ -102,11 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    const timeslots = [
-        "8:00AM", "9:00AM", "10:00AM", "11:00AM", 
-        "12:00PM", "1:00PM", "2:00PM", "3:00PM", 
-        "4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM"
-    ];
+    
 
     // Submit times function
     function submitTimes() {
@@ -117,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Get the room number text from the row
         room = row_parent.querySelector('td:first-child').textContent;
+        row_parent.querySelector('td:first-child').sib
 
 
         for (let i = 0; i < 14; i++) {
@@ -125,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let cell = row_parent.children.item(i);
             if (!selectedCells.includes(cell)) { continue; }
 
-            // Get the time slot text from the column
+            // translate the column index to text
             
             times.push(timeslots[i-1]);
         }
@@ -135,7 +157,84 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             alert("You have selected time slot " + times[0] + " for " + room + ".");
         }
+        for (let i = 0; i < selectedCells.length; i++) {
+            
+            selectedCells[i].className = "unavailable";
+        }
         // handle the submission
-
+        // post request to resrevations table
+        fetch('../PHP/handleReservation.php', { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ // payload
+                "room": room,
+                "times": times
+            })
+        }).then(data => {
+            return data.json();
+        }).then(res => {
+            console.log(res);
+            // reload
+            if (res.success) {
+               // document.location.reload();
+            }
+        }).catch(e => {
+            console.error('Error:', e);
+        });
     }
+
+    
+
+    // Attach the submitTimes function to the submit button
+    document.getElementById('submitBtn').addEventListener('click', submitTimes);
 });
+
+// url : '../PHP/handleReservation.php'
+function updateChart(url) { // runs whenever page is loaded
+
+    // get req : 16 rows
+    const rows = document.getElementById("table-data").children; //17 rows (includes header)
+    
+    
+    fetch(url, { 
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(data => {
+        return data.json();
+    }).then(res => {
+        console.log(res);
+        // handle reservations
+        // check 'timeslots' for string compare
+        // if 'name', color red, if '.', color green
+
+        for (let tr = 1; tr < 17; tr++) {
+            let rowData = res['reservations'][rooms[tr]];
+            let pageRow = rows[tr]; // <tr>
+
+            let cells = pageRow.children;
+
+            for (let td = 1; td < 14; td++) {
+                let slot = timeslots[td - 1];
+                let reserved = rowData[slot]; // null or email
+                if (reserved == null) {
+                    cells[td].className = "available";
+                } else {
+                    cells[td].className = "unavailable";
+                }
+            }
+        }
+        
+    }).catch(e => {
+        console.error('Error:', e);
+    });
+
+    // loop 0 - 13
+    // check 'timeslots' for string compare
+    // if 'name', color red, if '.', color green
+
+
+}

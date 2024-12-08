@@ -24,11 +24,6 @@
                 width: 190.48px;
                 height: 84px;
                 text-align: right;">
-
-                    <a href="" style="
-                        text-decoration: none;
-                        color: white;
-                        font-size: 18px;" id="username">Login/Register</a>
             </div>
         </nav>
     </section>
@@ -43,7 +38,7 @@
 
         <!-- Reservation Table -->
         <table id="reservation-table">
-            <thead> 
+            <thead id="table-data"> 
                 <tr>
                  <th>Space</th>
                     <th>8:00 AM</th>
@@ -320,46 +315,13 @@
         </table>
         <script src="ReservationJavaScript.js"></script>
     </div>
-<!----------Status----------->
+    <!----------Status----------->
     <div class="status-box">
         <div class="box available"></div> <span>Available</span>
         <div class="box your-booking"></div> <span>Your Booking</span>
         <div class="box unavailable"></div> <span>Unavailable/Padding</span>
-      </div>
-<!----------------Submit Button---------------->
-<div class="container">
-    <button type="button" class="submit-btn" onclick="openPopup()">Submit</button> <!-- Changed type="submit" to type="button" -->
-    
-    <!-- First Popup: Library Maintenance Order -->
-    <div class="popup" id="popup">
-        <h2>Library Maintenance Order</h2>
-        <ul>
-            <li>Loud talking, including cell phone conversations. Please switch ringers and notifications off or to vibrate. If you are in an extended conversation, please move to any public stairwell or the hallway behind the Reserve Reading Room.</li>
-            <li>Loitering, roaming, running, or jumping.</li>
-            <li>Abusive language or public profanity.</li>
-            <li>Damaging library materials, equipment, or property.</li>
-            <li>Lying on furniture or floors or putting feet on furniture or walls.</li>
-            <li>Littering or making a mess.</li>
-            <li>Leaving personal property unattended.</li>
-            <li>Playing audio, except with earphones at low volume.</li>
-            <li>Posting signs anywhere in the Library, on any surface (except the first floor bulletin board).</li>
-            <li>Soliciting, campaigning, or petitioning for any purpose.</li>
-            <li>The use of tobacco is prohibited on all grounds and facilities under CUNY jurisdiction, this policy applies to all tobacco and tobacco products including chewing tobacco and e-cigarettes.</li>
-            <li>Please see also CUNY Rules and Regulations for the Maintenance of Public Order.</li>
-            <li>Violations of Library policies and procedures could result in student disciplinary action.</li>
-        </ul>
-        <button type="button" onclick="closePopup()">Continue</button>
     </div>
-    
-    <!-- Second Popup: Confirmation -->
-    <div class="popup" id="confirmationPopup">
-        <h2>Your reservation has been confirmed!</h2>
-        <p>Thank you for following the library's maintenance rules. Your room reservation will be processed shortly.</p>
-        <button type="button" onclick="closePopup2()">Close</button>
-    </div>
-
-    <!-- Overlay for the popups -->
-    <div class="overlay" id="overlay"></div>
-    </div>
+    <!----------------Submit Button---------------->
+    <button id="submitBtn" class="submit-btn">Submit Times</button>
 </body>
 </html>

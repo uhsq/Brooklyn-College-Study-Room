@@ -13,26 +13,26 @@ $email = isset($data['email']) ? trim($data['email']) : '';
 $password = isset($data['password']) ? trim($data['password']) : '';
 
 if (empty($email) || empty($password)) {
-    die('Please fill all the fields.');
+    echo json_encode(["success" => false, 'Please fill all the fields.']);
 }
 
 $conn = new mysqli($config['host'], $config['username'], $config['password'], $config['db_name']);
 
 if ($conn->connect_error) {
-    die("Connection Failed: $conn->connect_error");
+    echo json_encode(["success" => false, "Connection Failed: $conn->connect_error"]);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $stmt = $conn->prepare("SELECT password FROM accounts WHERE email = ? AND otp IS NULL");
   if ($stmt === false) {
-    die("Error preparing statement: $conn->error");
+    echo json_encode(["success" => false, "Error preparing statement: $conn->error"]);
   }
 
   $stmt->bind_param("s", $email);
   $stmt->execute();
   $result = $stmt->get_result();
   if ($stmt->execute() === false) {
-    die("Error executing statement: $conn->error");
+    echo json_encode(["success" => false, "Error executing statement: $conn->error"]);
   }
 
   $res = $result->fetch_assoc();
@@ -43,6 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode(["success" => true]);
   } else {
 
-    die("This user does not exist in our system.");
+    echo json_encode(["success" => false, "message" => "This user does not exist in our system."]);
   }
 }

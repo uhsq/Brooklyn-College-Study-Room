@@ -12,19 +12,19 @@ $email = isset($data['email']) ? trim($data['email']) : '';
 $otp = isset($data['otp']) ? trim($data['otp']) : '';
 
 if (empty($email) || empty($otp)) {
-    die('Empty input found.');
+    echo json_encode(["success" => false, "message" => 'Empty input found.']);
 }
 
 // check otp
 $conn = new mysqli($config['host'], $config['username'], $config['password'], $config['db_name']);
 if ($conn->connect_error) {
-  die("Connection Failed: $conn->connect_error");
+  echo json_encode(["success" => false, "message" => "Connection Failed: $conn->connect_error"]);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $stmt = $conn->prepare("SELECT otp FROM accounts WHERE email = ? AND otp IS NOT NULL");
   if ($stmt === false) {
-    die("Error preparing statement: $conn->error");
+    echo json_encode(["success" => false, "message" => "Error preparing statement: $conn->error"]);
   }
 
   $stmt->bind_param("s", $email);
@@ -39,21 +39,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmt2 = $conn->prepare("UPDATE accounts SET otp = NULL WHERE email = ?");
 
       if ($stmt2 === false) {
-        die("Error preparing statement: $conn->error");
+        echo json_encode(["success" => false, "message" => "Error preparing statement: $conn->error"]);
       }
 
       $stmt2->bind_param("s", $email);
       
       if ($stmt2->execute() === false) {
-        die("Error executing statement: $conn->error");
+        echo json_encode(["success" => false, "message" => "Error executing statement: $conn->error"]);
       }
 
       $_SESSION['email'] = $email;
       echo json_encode(["success" => true]);
     } else {
-      die('Incorrect otp');
+      echo json_encode(["success" => false, "message" => 'Incorrect otp']);
     }
   } else {
-    die('query failed');
+    echo json_encode(["success" => false, "message" => 'query failed']);
   }
 }
