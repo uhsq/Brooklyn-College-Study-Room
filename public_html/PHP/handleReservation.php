@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $room = isset($data['room'])-0 ? trim($data['room']) : '';
+    $room = isset($data['room']) ? trim($data['room']) : '';
     $times = isset($data['times']) ? $data['times'] : [];
 
     if (empty($room) || empty($times)) {
@@ -108,14 +108,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           exit;
       }
       
-      $query = "UPDATE `reservations` SET ? = ? WHERE `room` = ? AND ? IS NULL";
+      $query = "UPDATE `reservations` SET `$resTime` = ? WHERE `room` = ? AND `$resTime` IS NULL";
       $stmt = $conn->prepare($query);
       if (!$stmt) {
           echo json_encode(["success" => false, "message" => "Error preparing statement: " . $conn->error]);
           exit;
       }
       
-      $stmt->bind_param('ssis',$resTime, $email, $room, $resTime);
+      $stmt->bind_param('si', $email, $room);
       if (!$stmt->execute()) {
           echo json_encode(["success" => false, "message" => "Error executing update for $time"]);
           exit;

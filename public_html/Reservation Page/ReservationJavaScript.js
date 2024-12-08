@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ // payload
-                "room": room,
+                "room": room.split(' ')[1],
                 "times": times
             })
         }).then(data => {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(res);
             // reload
             if (res.success) {
-               // document.location.reload();
+                document.location.reload();
             }
         }).catch(e => {
             console.error('Error:', e);
