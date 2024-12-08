@@ -223,6 +223,107 @@ input {
     transform:scale(.97);
     z-index: 2;
 }
+/* =============================
+   Features Styling 
+   ============================= */
+   .featured-services {
+    padding: 80px 40px;  /* Increased padding to make the section larger */
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.featured-services h2 {
+    font-size: 3em;  /* Increased font size of the section title */
+    margin-bottom: 30px;  /* Added more space between the title and the services */
+    color: #880d45;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;  /* Increased the gap between service items */
+    margin-top: 30px;  /* Increased space above the services */
+}
+
+.service-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Added stronger shadow for better emphasis */
+    width: 350px;  /* Increased width of each service item */
+    text-align: center;
+    padding: 30px;  /* Increased padding inside each item */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item img {
+    width: 100%;
+    height: 250px;  /* Increased image height */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.service-item h3 {
+    margin: 20px 0 15px;  /* Added more space around the title */
+    color: #880d45;
+    font-size: 1.8em;  /* Increased font size of service titles */
+    font-weight: bold;
+}
+
+.service-item p {
+    font-size: 1.1em;  /* Increased font size of service descriptions */
+    color: #555555;
+    line-height: 1.6;
+}
+
+.service-item:hover {
+    transform: scale(1.1);  /* Made hover effect more pronounced */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Added stronger shadow on hover */
+}
+/* =============================
+   Welcome Styling
+   ============================= */
+   .welcome-message {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 50px 0;
+    border-top: 5px solid #880d45;
+    border-bottom: 5px solid #880d45;
+}
+
+.welcome-message h2 {
+    font-size: 2.5em;
+    color: #880d45;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.welcome-message p {
+    font-size: 1.2em;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.welcome-message .reserve-button a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #880d45;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.welcome-message .reserve-button a:hover {
+    background-color: #a91f5d;
+}
 
 /* =============================
    Footer Styling
