@@ -61,3 +61,123 @@
     background-color: #ebb800c4; /* Change color on hover */
     color: rgb(0, 0, 0);
 }
+/* =====================
+   Room Styling
+   ===================== */
+   .room-info {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.image-room,
+.image-location {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.features {
+    margin-top: 20px;
+}
+
+.features h2 {
+    color: #333;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+strong {
+    color: #555;
+}
+/* =============================
+   Footer Styling
+   ============================= */
+   .footer {
+    background-color: #882345; 
+    color:white;
+    height: 30vh; 
+    display: flex; /* Align list items horizontally */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0vh;
+}
+
+.foot-section {
+    justify-content: space-between;
+    margin: auto; /* Center the footer content */
+    padding: 20px;
+}
+
+.foot-contact, .foot-links, .footer-social {
+    flex: 2; /* Flex property to share space */
+    min-width: 250px; /* Min width for each section */
+    margin: 20px;
+}
+
+.footer h2 {
+    font-size: 1.5 rem;
+}
+
+.footer p {
+    line-height: 1.5;
+}
+
+.foot-links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.foot-links li {
+    margin: 10px;
+}
+
+.foot-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    transition: color 0.3s;
+}
+
+.foot-links a:hover {
+    color:#EBB700;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
